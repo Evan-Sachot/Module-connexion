@@ -100,7 +100,7 @@
     <div class="login-container">
         
         <h2>Connexion</h2>
-        <form method="post" action="connexion.php">
+        <form method="post" >
             <div class="input-group">
                 <label for="login" >Login</label>
                 <input type="text" id="login" name="login" required>
@@ -123,12 +123,11 @@
             </div>
             <button type="submit">s'inscrire</button>
         </form>
-        <a class="register-link" href="inscription.php">Créer un compte</a>
     </div>
 </body>
 </html>
 <?php
-$conn = new mysqli("localhost", "root", "", "moduleconnexion");
+$conn = new mysqli("localhost", "root", "", "moduleconnexion",3307);
 function inscription(){
 if (isset($_POST['login'])&& isset($_POST['prenom']) && isset($_POST['nom']) && isset($_POST['password']) && isset($_POST['passwordconf']) && $_POST['password']=== $_POST['passwordconf']){
     $login= $_POST['login'];
@@ -144,4 +143,5 @@ if (isset($_POST['login'])&& isset($_POST['prenom']) && isset($_POST['nom']) && 
      }
 
 }}
+var_dump($conn);
 ?>
