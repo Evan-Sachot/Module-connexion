@@ -127,3 +127,21 @@
     </div>
 </body>
 </html>
+<?php
+$conn = new mysqli("localhost", "root", "", "moduleconnexion");
+function inscription(){
+if (isset($_POST['login'])&& isset($_POST['prenom']) && isset($_POST['nom']) && isset($_POST['password']) && isset($_POST['passwordconf']) && $_POST['password']=== $_POST['passwordconf']){
+    $login= $_POST['login'];
+    $prenom = $_POST['prenom'];
+    $nom = $_POST['nom'];
+    $password = $_POST['password'];
+    global $conn;
+    $sql = "insert into users (login,prenom,nom,password) values ('$login','$prenom','$nom','$password')";
+     if ($conn->query($sql)=== TRUE){
+        echo "<script>alert('inscription réussie');</script>";
+     }else{
+        echo "<script>alert('inscription échouée');</script>";
+     }
+
+}}
+?>
