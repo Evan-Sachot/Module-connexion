@@ -105,12 +105,23 @@
                 <label for="login" >Login</label>
                 <input type="text" id="login" name="login" required>
             </div>
-            
+            <div class="input-group">
+                <label for="prenom" >Prénom</label>
+                <input type="text" id="prenom" name="prenom" required>
+            </div>
+              <div class="input-group">
+                <label for="nom" >Nom</label>
+                <input type="text" id="nom" name="nom" required>
+            </div>
              <div class="input-group">
                 <label for="password">password</label>
                 <input type="text" id="password" name="password" required>
             </div>
-            <button type="submit">Se connecter</button>
+            <div class="input-group">
+                <label for="passwordconf">confirmer le mot de passe</label>
+                <input type="text" id="passwordconf" name="passwordconf" required>
+            </div>
+            <button type="submit">s'inscrire</button>
         </form>
         <a class="register-link" href="inscription.php">Créer un compte</a>
     </div>
