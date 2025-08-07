@@ -1,6 +1,6 @@
 <?php 
 session_start();
-$conn = new mysqli("localhost",'root','',"moduleconnexion",3307);
+$conn = new mysqli("localhost",'root','',"moduleconnexion",3306);
 echo $_SESSION['user_id'];
 $user_id = $_SESSION['user_id'];
 $sql = "SELECT * FROM utilisateurs WHERE id = ?";
