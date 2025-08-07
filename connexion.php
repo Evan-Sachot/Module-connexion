@@ -1,5 +1,5 @@
 <?php
-$conn = new mysqli("localhost", "root", "", "moduleconnexion",3306);
+$conn = new mysqli("localhost", "root", "", "moduleconnexion",3307);
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['connexion'])) {
     connexion();
 }
