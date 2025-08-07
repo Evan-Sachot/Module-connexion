@@ -1,41 +1,7 @@
-<?php
-$conn = new mysqli("localhost", "root", "", "moduleconnexion",3307);
-if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['inscription'])) {
-    inscription();
-}
-function inscription(){
-if (isset($_POST['login'])&& isset($_POST['prenom']) && isset($_POST['nom']) && isset($_POST['password']) && isset($_POST['passwordconf']) && $_POST['password']=== $_POST['passwordconf']){
-    $login= $_POST['login'];
-    $prenom = $_POST['prenom'];
-    $nom = $_POST['nom'];
-    $password = password_hash($_POST['password'], PASSWORD_DEFAULT);
-    global $conn;
-        $check = $conn->prepare("SELECT id FROM utilisateurs WHERE login = ?");
-        $check->bind_param("s", $login);
-        $check->execute();
-        $check->store_result();
-        if ($check->num_rows >0){
-        echo 'utlisateur existe déja';
-    }
-    else{
-         $stmt = $conn->prepare("INSERT INTO utilisateurs (login,prenom,nom,password) values (?,?,?,?)");
-         $stmt->bind_param('ssss',$login, $prenom, $nom, $password);
-        if ($stmt->execute() === true){
-             header("Location: connexion.php");
-             exit();
-            
-        }   
-        else{
-            header("location: inscription.php?error=1");
-            exit();
-        } 
-        }
-    
-
-}}
-var_dump($conn);
+<?php 
+session_start();
+echo $_SESSION['user_id'];
 ?>
-
 <!DOCTYPE html>
 <html lang="fr">
 <head>

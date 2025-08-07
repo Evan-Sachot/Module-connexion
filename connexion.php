@@ -1,3 +1,36 @@
+<?php
+$conn = new mysqli("localhost", "root", "", "moduleconnexion",3307);
+if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['connexion'])) {
+    connexion();
+}
+function connexion(){
+    global $conn;
+    if (isset($_POST['login']) && isset($_POST['password'])){
+        $login = $_POST['login'];
+        $password = $_POST['password'];
+        $stmt = $conn->prepare("SELECT * FROM utilisateurs WHERE login = ?");
+        $stmt->bind_param('s', $login);
+        $stmt->execute();
+        $stmt->store_result();
+        if ($stmt->num_rows > 0){
+           $stmt->bind_result($id, $login_db,$prenom, $nom, $password_hash);
+            $stmt->fetch();
+            if (password_verify($password, $password_hash)){
+                echo 'connexion';
+                session_start();
+                $_SESSION['user_id'] = $id;
+                header("Location: profil.php");
+                exit();
+            } else {
+                echo 'Mot de passe incorrect';
+            }
+        }
+
+    }
+
+}
+
+?>
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -110,7 +143,7 @@
                 <label for="password">password</label>
                 <input type="text" id="password" name="password" required>
             </div>
-            <button type="submit">Se connecter</button>
+            <button type="submit" name="connexion">Se connecter</button>
         </form>
         <a class="register-link" href="inscription.php">Créer un compte</a>
     </div>
