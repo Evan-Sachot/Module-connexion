@@ -31,7 +31,7 @@ function update(){
        $prenom = $_POST['prenom'];
        $nom = $_POST['nom'];
        $password = password_hash($_POST['password'], PASSWORD_DEFAULT);
-       $stmt = $conn->prepare("UPDATE utlisateurs SET login = ?, prenom = ?, nom = ?, password = ? WHERE id = ?");
+       $stmt = $conn->prepare("UPDATE utilisateurs SET login = ?, prenom = ?, nom = ?, password = ? WHERE id = ?");
        $stmt->bind_param('ssssi', $login, $prenom, $nom, $password, $user_id);
          if ($stmt->execute()=== true){
             echo 'mise a jour reussi';
