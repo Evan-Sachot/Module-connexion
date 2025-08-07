@@ -33,7 +33,6 @@ if (isset($_POST['login'])&& isset($_POST['prenom']) && isset($_POST['nom']) && 
     
 
 }}
-var_dump($conn);
 ?>
 
 <!DOCTYPE html>
@@ -138,7 +137,7 @@ var_dump($conn);
 <body>
     <div class="login-container">
         
-        <h2>inscription</h2>
+        <h2>Inscription</h2>
         <form method="POST" >
             <div class="input-group">
                 <label for="login" >Login</label>

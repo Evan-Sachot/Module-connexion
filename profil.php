@@ -1,6 +1,8 @@
 <?php 
 session_start();
 echo $_SESSION['user_id'];
+
+var_dump($_SESSION);
 ?>
 <!DOCTYPE html>
 <html lang="fr">
