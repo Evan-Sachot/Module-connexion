@@ -33,7 +33,6 @@ if (isset($_POST['login'])&& isset($_POST['prenom']) && isset($_POST['nom']) && 
     
 
 }}
-var_dump($conn);
 ?>
 
 <!DOCTYPE html>
@@ -42,6 +41,7 @@ var_dump($conn);
     <meta charset="UTF-8">
     <title>Connexion</title>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+    <link href="style.css" rel="stylesheet">
     <style>
         body {
             background: linear-gradient(120deg, #2980b9 0%, #6dd5fa 100%);
@@ -137,7 +137,7 @@ var_dump($conn);
 <body>
     <div class="login-container">
         
-        <h2>inscription</h2>
+        <h2>Inscription</h2>
         <form method="POST" >
             <div class="input-group">
                 <label for="login" >Login</label>
