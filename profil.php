@@ -76,7 +76,6 @@ function update(){
                 <input type="text" id="passwordconf" name="passwordconf" required>
             </div>
             <button type="submit" name="update">Update</button>
-            <a class="register-link" href="connexion.php">Se connecter</a>
         </form>
     </div>
 </body>
