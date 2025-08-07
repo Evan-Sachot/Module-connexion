@@ -42,6 +42,7 @@ var_dump($conn);
     <meta charset="UTF-8">
     <title>Connexion</title>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+    <link href="style.css" rel="stylesheet">
     <style>
         body {
             background: linear-gradient(120deg, #2980b9 0%, #6dd5fa 100%);
