@@ -3,6 +3,7 @@ body {
             font-family: 'Montserrat', Arial, sans-serif;
             min-height: 100vh;
             margin: 0;
+            
         }
         .login-container {
             width: 370px;
@@ -154,4 +155,19 @@ header nav {
     box-shadow: 0 1px 4px rgba(0,0,0,0.08);
     margin: 0;
     padding: 0;
+}
+
+
+.footer
+{
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: #333;
+  color: white;
+  text-align: center;
+}
+.footer > p{
+    display: inline-flex;
 }
