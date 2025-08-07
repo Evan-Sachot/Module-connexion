@@ -29,8 +29,7 @@ function connexion(){
     }
 
 }
-
-?>
+?>-
 <!DOCTYPE html>
 <html lang="fr">
 <head>

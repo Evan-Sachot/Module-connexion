@@ -1,7 +1,6 @@
 <?php 
 session_start();
 $conn = new mysqli("localhost",'root','',"moduleconnexion",3306);
-echo $_SESSION['user_id'];
 $user_id = $_SESSION['user_id'];
 $sql = "SELECT * FROM utilisateurs WHERE id = ?";
 $stmt = $conn->prepare($sql);
@@ -54,6 +53,13 @@ function update(){
     <div class="login-container">
         
         <h2>Mon profil</h2>
+
+            <?php 
+            if($_SESSION['user_id'] === 1)
+            {
+                require_once 'profil-admin.php';
+            } 
+            ?>
         <form method="POST" >
             <div class="input-group">
                 <label for="login" >Login</label>
@@ -76,6 +82,7 @@ function update(){
                 <input type="text" id="passwordconf" name="passwordconf" required>
             </div>
             <button type="submit" name="update">Update</button>
+            <a class="register-link" href="index.php">Retour</a> 
         </form>
     </div>
 </body>
