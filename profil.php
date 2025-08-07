@@ -53,7 +53,7 @@ function update(){
 <body>
     <div class="login-container">
         
-        <h2>inscription</h2>
+        <h2>Mon profil</h2>
         <form method="POST" >
             <div class="input-group">
                 <label for="login" >Login</label>
